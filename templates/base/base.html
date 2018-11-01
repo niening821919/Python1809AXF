@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'base/css/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'base/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'base/css/swiper.css' %}">
+    <link rel="stylesheet" href="{% static 'base/css/base.css' %}">
+    {% block extcss %}
+
+    {% endblock %}
+    <title>
+        {% block title %}
+        {% endblock %}
+    </title>
+</head>
+<body>
+{#头部#}
+{% block header %}
+    <header>爱鲜蜂</header>
+{% endblock %}
+
+{#内容#}
+<div class="hidescroll">
+    <div class="content">
+        {% block content %}
+
+        {% endblock %}
+    </div>
+</div>
+
+{#尾部#}
+{% block footer %}
+    <footer>
+        <a href="{% url 'axf:home' %}" class="home">
+            <dl>
+                <dt><span></span></dt>
+                <dd><p>主页</p></dd>
+            </dl>
+        </a>
+        <a href="{% url 'axf:market' %}" class="market">
+            <dl>
+                <dt><span></span></dt>
+                <dd><p>闪购超市</p></dd>
+            </dl>
+        </a>
+        <a href="{% url 'axf:cart' %}" class="cart">
+            <dl>
+                <dt><span></span></dt>
+                <dd><p>购物车</p></dd>
+            </dl>
+        </a>
+        <a href="{% url 'axf:mine' %}" class="mine">
+            <dl>
+                <dt><span></span></dt>
+                <dd><p>我的</p></dd>
+            </dl>
+        </a>
+    </footer>
+{% endblock %}
+
+
+
+<script src="{% static 'base/js/jquery.js' %}"></script>
+<script src="{% static 'base/js/bootstrap.js' %}"></script>
+<script src="{% static 'base/js/swiper.js' %}"></script>
+<script src="{% static 'base/js/base.js' %}"></script>
+
+{% block extjs %}
+
+{% endblock %}
+
+
+</body>
+</html>
